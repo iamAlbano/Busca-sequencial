@@ -3,8 +3,9 @@
 	msg: .asciiz "\t ---- Insira os valores do vetor ----- \n\n"
 	msg_busca: .asciiz "\t --- Insira o valor a ser buscado no vetor: --- \n\n"
 	msg_b: .asciiz " valor: "
-	msg_encontrado: .asciiz " Valor encontrado: "
-	msg_naoEncontrado: .asciiz "Valor não encontrado... "
+	msg_encontrado: .asciiz "\n\n Valor encontrado: "
+	msg_posicao: .asciiz "\n Valor alocado na posição: "
+	msg_naoEncontrado: .asciiz "\n\n Valor não encontrado... "
 	
 .text
 	
@@ -72,7 +73,25 @@
 
 	encontrado:
 		li $v0, 4
-		la $a0, msg_encontrado		
+		la $a0, msg_encontrado	
+		syscall
+		
+		li $v0, 1	
+		move $a0, $s4
+		syscall
+		
+		li $v0, 4
+		la $a0, msg_posicao
+		syscall
+		
+		li $t9, 4
+		
+		div $s0, $t9 	#divisão
+		mflo $s0
+		addi $s0, $s0, 1
+		
+		li $v0, 1
+		move $a0, $s0
 		syscall
 		
 		li $v0, 10
