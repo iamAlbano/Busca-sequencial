@@ -18,8 +18,6 @@
 	
 	jal leitura	
 	
-	
-	
 	li $v0, 4   
 	la $a0, msg_busca   #pede ao usuário para inserir o valor a ser buscado no vetor
 	syscall
@@ -35,7 +33,7 @@
 	syscall
 	
 	
-	
+
 	leitura:
 		#subrotina para ler os dados e armazenar no vetor
 		
@@ -127,7 +125,4 @@
 			move $a0, $s0
 			syscall
 			jr $ra #retorna para onde a subrotina foi chamada
-				
-		
-			
 				
