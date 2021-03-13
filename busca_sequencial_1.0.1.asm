@@ -91,8 +91,7 @@
 										
 			addi $s0, $s0, 4
 			addi $t0, $t0, 1 
-				
-			nop		
+	
 			j while2
 			
 		exit2:
