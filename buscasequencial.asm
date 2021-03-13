@@ -101,8 +101,7 @@
 		li $v0, 4
 		la $a0, msg_naoEncontrado		
 		syscall
-	 	
-	 	#"retorno para o usuario"	
+	 		
 	 
 		
 		
